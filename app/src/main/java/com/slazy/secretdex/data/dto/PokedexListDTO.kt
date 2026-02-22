@@ -3,7 +3,7 @@ package com.slazy.secretdex.data.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class PokemonListDTO(
+data class PokedexListDTO(
     @SerializedName("count")
     val count: Int,
     @SerializedName("next")

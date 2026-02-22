@@ -1,5 +1,6 @@
 package com.slazy.secretdex.data.network.di
 
+import com.slazy.secretdex.data.network.PokemonApi
 import com.slazy.secretdex.util.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -18,8 +19,9 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(baseUrl: String): Retrofit = Retrofit.Builder()
+    fun provideRetrofit(baseUrl: String) = Retrofit.Builder()
         .baseUrl(baseUrl)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+        .create(PokemonApi::class.java)
 }
